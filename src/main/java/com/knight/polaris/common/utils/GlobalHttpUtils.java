@@ -31,6 +31,7 @@ public class GlobalHttpUtils {
     private static final Logger logger = LoggerFactory.getLogger(GlobalHttpUtils.class);
 
     public static String postWithForm(String url, Map<String, Object> paramMap) {
+        logger.debug("Http request url => [{}]", url);
         List<BasicNameValuePair> list = new ArrayList<>();
         for(String key : paramMap.keySet()) {
             list.add(new BasicNameValuePair(key, paramMap.get(key).toString()));
@@ -58,6 +59,7 @@ public class GlobalHttpUtils {
     }
 
     public static String postWithJson(String url, String paramStr) {
+        logger.debug("Http request url => [{}]", url);
         HttpPost request = new HttpPost(url);
         StringEntity entity;
         try {
@@ -98,21 +100,23 @@ public class GlobalHttpUtils {
                 }
             }
         }
-        logger.debug("Http request url => [{}]", builder.toString());
         return getRequest(builder.toString());
     }
 
     public static String getRequest(String url) {
+        logger.debug("Http request url => [{}]", url);
         HttpGet request = new HttpGet(url);
         return request(request);
     }
 
     public static String putRequest(String url) {
+        logger.debug("Http request url => [{}]", url);
         HttpPut request = new HttpPut(url);
         return request(request);
     }
 
     public static String deleteRequest(String url) {
+        logger.debug("Http request url => [{}]", url);
         HttpDelete request = new HttpDelete(url);
         return request(request);
     }
