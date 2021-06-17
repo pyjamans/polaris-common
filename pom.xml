@@ -3,19 +3,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.polaris.web</groupId>
+        <groupId>com.knight.polaris</groupId>
         <artifactId>polaris-parent</artifactId>
         <version>1.0.1</version>
     </parent>
 
-    <groupId>com.polaris.web</groupId>
+    <groupId>com.knight.polaris</groupId>
     <artifactId>polaris-common</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>polaris-common</name>
 
 
     <dependencies>
-
+        <!--HttpClient依赖-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <!--FastJson依赖-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.60</version>
+        </dependency>
     </dependencies>
 
 </project>
