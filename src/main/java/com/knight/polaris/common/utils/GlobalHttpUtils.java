@@ -30,6 +30,8 @@ public class GlobalHttpUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(GlobalHttpUtils.class);
 
+    private static final String HTTP_JSON = "application/json;charset=UTF-8";
+
     public static String postWithForm(String url, Map<String, Object> paramMap) {
         logger.debug("Http request url => [{}]", url);
         List<BasicNameValuePair> list = new ArrayList<>();
@@ -69,7 +71,7 @@ public class GlobalHttpUtils {
             return null;
         }
         entity.setContentType("text/json");
-        request.setHeader("Content-Type", GlobalConstant.HTTP_JSON);
+        request.setHeader("Content-Type", HTTP_JSON);
         request.setEntity(entity);
         return request(request);
     }
