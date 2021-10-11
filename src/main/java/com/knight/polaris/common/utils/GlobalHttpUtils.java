@@ -1,7 +1,6 @@
 package com.knight.polaris.common.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.knight.polaris.common.constant.GlobalConstant;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
